@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container">
+    <h1 style="text-align: center; margin-top: 3rem;">Shot Training Modules</h1>
+    <div class="training-grid">
+        {% for shot in shots %}
+        <div class="card">
+            <h2>{{ shot.title }}</h2>
+            <p>{{ shot.description }}</p>
+            <hr style="border: 0.5px solid rgba(255,255,255,0.1); margin: 1rem 0;">
+            <h3>Steps:</h3>
+            <ul>
+                {% for step in shot.steps %}
+                <li>{{ step }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
